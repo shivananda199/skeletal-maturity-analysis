@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Skeletal Maturity Analysis</title>
+<!--css-->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="css/ken-burns.css" type="text/css" media="all" />
+<link rel="stylesheet" href="css/animate.min.css" type="text/css" media="all" />
+<!--css-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="RTO WEB TEMPLATE" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--js-->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!--js-->
+<!--webfonts-->
+<link href='//fonts.googleapis.com/css?family=Cagliostro' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!--webfonts-->
+</head>
+<body>
+	<!--header-->
+		<div class="header">
+			<div class="container">
+				<nav class="navbar navbar-default">
+					<div class="container-fluid">
+				<!---Brand and toggle get grouped for better mobile display--->
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+								<span class="sr-only">Toggle navigation</span> 
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<div class="navbar-brand">
+								<h1><a href="index.html"><span>Skeletal Maturity Analysis</span></a></h1>
+							</div>
+						</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							<nav class="link-effect-2" id="link-effect-2">
+								<ul class="nav navbar-nav">
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+
+<!--banner-->
+	<!--content-->
+		<div class="content">
+
+			<div class="student-w3ls">
+				<div class="container">
+					<h3 class="tittle"> </h3>
+					<div class="student-grids">
+						<div class="col-md-14 student-grid">
+							<h4>How the model works?!</h4>
+								<p>
+								<font color="black">
+								The block diagram of the model employed to predict the bone age is shown below. To train the neural network model for the prediction of bone age, the csv file consisting of features that identifies a particular image is loaded on
+as a dataframe. This dataframe consists of original features and later appended with
+path to the image corresponding to the identifying features.</font>
+								</p>
+								<img src = "images/model.png" width=50% align="center">
+								<p><font color="black">
+									The dataframe appended with path is split into test and train data with 75-25
+split. The train dataframe is grouped with respect to bone age and sex to form 10
+categories of data among them. This is done to avoid skewed results while testing the
+model. Using the ImageDataGenerator and preprocess_input available in keras, images
+for training are loaded into a dataframe with a predetermined height and width and
+set with a batch size of 16. This dataframe is later fed into the input layer of the
+model.
+								</font></p>
+								<p><font color="black">
+								The output from the input layer is connected to a pre trained VGG16 model
+with imagenet weights. The VGG16 layers provides the extracted features to
+attention layer with batch normalized features. The attention model returns
+a vector which is supposed to be the summary of the normalized features, focusing
+on information linked to the context. This attention layer models mimic human
+behaviour to selectively process data by focusing on the parts or segments of data
+that is the most important. Just as the human mind focuses on important facts when
+evaluating a situation, attention models speed up the processing of large volumes of
+data by concentrating on the most relevant segments. The output obtained after
+processing through the attention layer, a masked feature is obtained by multiplying
+attention layer features and normalized features. These masked features are feed into
+Global Average Pooling (GAP) layer to fill the blanks formed by the attention
+layer. The output from the GAP layer is fed into dense neural network layer which is
+a fully connected, so all the neurons are connected to those of the next layer, and the
+final layer is the output layer which gives bone age estimates. This model is compiled
+with adam optimizer.</font></p>
+
+								<!--<p>The things we do are</p>
+								<ul class="grid-part">
+									<li><i class="glyphicon glyphicon-ok-sign"> </i>Issue driving license</li>
+									<li><i class="glyphicon glyphicon-ok-sign"> </i>Issue learner's license</li>
+									<li><i class="glyphicon glyphicon-ok-sign"> </i>Issue vehicle registration certificate</li>
+									<li><i class="glyphicon glyphicon-ok-sign"> </i>Amend traffic rules and regulations</li>
+									<li><i class="glyphicon glyphicon-ok-sign"> </i>Conduct awareness programmes on road safety, pollution control etc.</li>
+								</ul>-->
+
+						</div>
+						<!--
+						<div class="col-md-6 student-grid">
+							<img src="images/kmap.jpg" class="img-responsive" alt="Image-2">
+						</div>-->
+						<!--<div class="clearfix"></div>-->
+					</div>
+				</div>
+			</div>
+			
+		</div> 
+
+
+		<form action="upload.php" method="post" enctype="multipart/form-data">
+    Select image to upload:
+    <input type="file" name="fileToUpload" id="fileToUpload">
+    <input type="submit" value="Upload Image" name="submit">
+</form>
+
+		
+		<!--content-->
+		<!--footer-->
+			<div class="footer-w3">
+				<div class="container">
+					<div class="footer-grids">
+						<div class="col-md-8 footer-grid">
+							<h4>About Us</h4>
+							<p> The project team:
+								<span>
+									Manoj Kumar &nbsp; &nbsp; &nbsp; [mnkumar493@gmail.com]<br>
+									Shivananda D &nbsp; &nbsp;&nbsp; [shivananda199@gmail.com]<br>
+									Kapil Vasisht &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [kapilvshst@gmail.com]
+								</span>
+							</p>
+
+						</div>
+						<div class="col-md-4 footer-grid">
+						<h4>Guidance</h4>
+							<p>
+								Vani M<br>
+								Associate Professor<br>
+								Dept. of CSE, NITK Surathkal
+							</p>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</div>
+		<!--footer-->
+		<!---copy--->
+			<div class="copy-section">
+				<div class="container">
+					<div class="social-icons">
+						<a href="#"><i class="icon1"></i></a>
+						<a href="#"><i class="icon2"></i></a>
+						<a href="#"><i class="icon3"></i></a>
+						<a href="#"><i class="icon4"></i></a>
+					</div>
+				</div>
+			</div>
+			<!---copy--->
+
+
+
+</body>
+</html>
