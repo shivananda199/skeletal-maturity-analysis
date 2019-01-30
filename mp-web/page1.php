@@ -118,11 +118,10 @@ with adam optimizer.</font></p>
 		</div> 
 
 
-		<form action="upload.php" method="post" enctype="multipart/form-data">
-    Select image to upload:
-    <input type="file" name="fileToUpload" id="fileToUpload">
-    <input type="submit" value="Upload Image" name="submit">
-</form>
+		<form action="upload1.php" method="POST" enctype="multipart/form-data">
+         <input type="file" name="image" />
+         <input type="submit"/>
+      </form>
 
 		
 		<!--content-->
