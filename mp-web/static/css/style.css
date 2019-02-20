@@ -96,7 +96,7 @@ nav a:focus {
     border: none !important;
 	padding: 1.5em 0;
 }
-.navbar-brand h1 a {
+.navbar-brand h1 span {
     font-size: 1.4em;
     text-decoration: none;
 	color:#fff;

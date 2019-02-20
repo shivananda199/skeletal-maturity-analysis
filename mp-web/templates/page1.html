@@ -3,18 +3,18 @@
 <head>
 <title>Skeletal Maturity Analysis</title>
 <!--css-->
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-<link rel="stylesheet" href="css/ken-burns.css" type="text/css" media="all" />
-<link rel="stylesheet" href="css/animate.min.css" type="text/css" media="all" />
+<link href="{{ url_for('static', filename = 'css/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all" />
+<link href="{{ url_for('static', filename = 'css/style.css') }}" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="{{ url_for('static', filename='css/ken-burns.css')}}" type="text/css" media="all" />
+<link rel="stylesheet" href="{{ url_for('static', filename='css/animate.min.css') }}" type="text/css" media="all" />
 <!--css-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="RTO WEB TEMPLATE" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!--js-->
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<script src="{{ url_for('static', filename = 'js/jquery.min.js')}}"></script>
+<script src="{{ url_for('static', filename = 'js/bootstrap.min.js')}}"></script>
 <!--js-->
 <!--webfonts-->
 <link href='//fonts.googleapis.com/css?family=Cagliostro' rel='stylesheet' type='text/css'>
@@ -36,7 +36,7 @@
 								<span class="icon-bar"></span>
 							</button>
 							<div class="navbar-brand">
-								<h1><a href="index.html"><span>Skeletal Maturity Analysis</span></a></h1>
+								<h1><span>Skeletal Maturity Analysis</span></h1>
 							</div>
 						</div>
 
@@ -68,7 +68,7 @@
 as a dataframe. This dataframe consists of original features and later appended with
 path to the image corresponding to the identifying features.</font>
 								</p>
-								<img src = "images/model.png" width=50% align="center">
+								<img src = "{{url_for('static', filename='images/model.png')}}" width=50% align="center">
 								<p><font color="black">
 									The dataframe appended with path is split into test and train data with 75-25
 split. The train dataframe is grouped with respect to bone age and sex to form 10
@@ -118,11 +118,13 @@ with adam optimizer.</font></p>
 		</div> 
 
 
-		<form action="upload1.php" method="POST" enctype="multipart/form-data">
-         <input type="file" name="image" />
-         <input type="submit"/>
-      </form>
 
+		   <form action = "http://localhost:5000/uploader" method = "POST" 
+			  enctype = "multipart/form-data">
+			  <input type = "file" name = "file" />
+			  <input type = "submit"/>
+		   </form>
+	
 		
 		<!--content-->
 		<!--footer-->
