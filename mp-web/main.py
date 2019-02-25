@@ -24,7 +24,14 @@ def upload():
         f = request.files['file']
         x = os.path.join(app.config['UPLOAD_FLODER'], f.filename)
         f.save(x)
-        return render_template("page1.html")
+        return render_template("upload.html")
+
+@app.route('/upload.html')
+def mm():
+
+        # run the models here and determine the bone age
+        
+        return render_template("upload.html")
 
 if __name__ == "__main__":
     app.run(debug=True)

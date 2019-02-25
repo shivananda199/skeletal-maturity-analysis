@@ -105,6 +105,14 @@ with adam optimizer.</font></p>
 									<li><i class="glyphicon glyphicon-ok-sign"> </i>Conduct awareness programmes on road safety, pollution control etc.</li>
 								</ul>-->
 
+								<p><b><font color="black">
+									Check your bone age by uploading an image(x-ray) of your hand.</font></b></p>
+								   <form action = "http://localhost:5000/uploader" method = "POST" 
+									  enctype = "multipart/form-data">
+									  <input type = "file" name = "file" />	  
+										<button onclick = "location.href= 'upload.html'">Submit</button>
+									</form>
+
 						</div>
 						<!--
 						<div class="col-md-6 student-grid">
@@ -117,14 +125,9 @@ with adam optimizer.</font></p>
 			
 		</div> 
 
-
-
-		   <form action = "http://localhost:5000/uploader" method = "POST" 
-			  enctype = "multipart/form-data">
-			  <input type = "file" name = "file" />
-			  <input type = "submit"/>
-		   </form>
-	
+		
+		
+		
 		
 		<!--content-->
 		<!--footer-->
